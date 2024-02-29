@@ -49,7 +49,7 @@ function App() {
     });
     console.log(isExist);
     !isExist ? setFavPoke((previous)=>([...previous,poke])) : null;
-    isExist=false;
+    isExist=false
   }
   function removeFav(deleteId){
     setFavPoke((previous)=>(previous.filter((item,index)=>(index!=deleteId))))
@@ -60,7 +60,7 @@ function App() {
     <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
     {loading ? <div className="grid grid-cols-2"><ReactLoading type="spin" color="pink" height={'50%'} width={'50%'}/> Loading...</div> :
     <><div className="h-fit">
-        <div className="capitalize flex flex-inline text-5xl font-bold justify-center">{poke?.name} <img className="-mt-3 -ml-3 flex" src={poke?.sprites?.front_default} alt={poke.name}></img></div>
+        <div className="capitalize flex flex-inline text-4xl md:text-5xl font-bold justify-center">{poke?.name} <img className="-mt-3 -ml-3 flex" src={poke?.sprites?.front_default} alt={poke.name}></img></div>
         <button onClick={addFav} className="my-3">Add to Favorite</button>
         <br />
         <img className="h-3/6 w-3/6 mb-6 mx-auto" src={poke?.sprites?.other?.home?.front_default} alt={poke.name}></img>
@@ -78,8 +78,8 @@ function App() {
       </div>
     </div>
       <div>
-        <h2 className="text-3xl mb-10 font-bold">My Favorite Pokemon</h2>
-        {favPoke.length>0 ? <FavPoke favorite={favPoke} removeFav={removeFav}/> : <div className="flex h-4/5 flex-wrap content-center justify-center ml-8 mr-3 mt-3 rounded">Please add your favorite Pokemon!</div>}
+        <h2 className="text-3xl mb-10 font-bold h-fit mt-10 md:mt-0">My Favorite Pokemon</h2>
+        {favPoke.length>0 ? <FavPoke favorite={favPoke} removeFav={removeFav}/> : <div className="flex h-4/5 flex-wrap content-center justify-center ml-8 mr-3 mt-3 rounded h-fit">Please add your favorite Pokemon!</div>}
       </div></>}
     </div>
   </div>)
