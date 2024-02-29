@@ -4,7 +4,7 @@ import {FaHeart} from 'react-icons/fa'
 function FavPoke({favorite,removeFav,addFav}) {
   return (
     <div className='container'>
-    <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
         {favorite?.map((pokemon,index)=>(
         <div className='my-4 md:my-0' key={index}>
             <h3 className='capitalize font-bold'>{pokemon.name}</h3>
